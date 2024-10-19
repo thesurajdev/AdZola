@@ -5,70 +5,66 @@
                 <div class="content_wrapper">
                     <div class="spacer-xxhuge"></div>
                     <div id="main-form" class="form-wrap w-form">
-                        <form id="email-form" name="email-form" method="POST" data-wf-page-id="6527b46c9f9e668d86dfbe91" data-wf-element-id="c4c1ca9d-5abb-a135-0cc1-3556ba2b4871">
+                        <form id="email-form" name="email-form" data-name="Email Form" redirect="/thank-you.html" data-redirect="/thank-you.html" method="post" action="/api/submit-form">
                             <h2 class="h2-simple-small">Please tell us about your project</h2>
-                            
                             <div class="one-quation">
-                                <label for="service" class="field-label">Service</label>
+                                <label for="services" class="field-label">Service</label>
                                 <div class="choise-line">
                                     <label class="w-checkbox ms-pill-item">
-                                        <input type="checkbox" name="services" value="Social Media Management" class="w-checkbox-input ms-pill-checkbox" />
-                                        <span class="ms-pill-label w-form-label">Social Media Management</span>
+                                        <input type="checkbox" name="services[]" id="Checkbox-Social-Media-Management" class="w-checkbox-input ms-pill-checkbox" value="Social Media Management"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-Social-Media-Management">Social Media Management</span>
                                     </label>
                                     <label class="w-checkbox ms-pill-item">
-                                        <input type="checkbox" name="services" value="Paid Advertising" class="w-checkbox-input ms-pill-checkbox" />
-                                        <span class="ms-pill-label w-form-label">Paid Advertising</span>
+                                        <input type="checkbox" name="services[]" id="Checkbox-Paid-Advertising" class="w-checkbox-input ms-pill-checkbox" value="Paid Advertising"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-Paid-Advertising">Paid Advertising</span>
                                     </label>
                                     <label class="w-checkbox ms-pill-item">
-                                        <input type="checkbox" name="services" value="Website development" class="w-checkbox-input ms-pill-checkbox" />
-                                        <span class="ms-pill-label w-form-label">Website development</span>
+                                        <input type="checkbox" name="services[]" id="Checkbox-Website-development" class="w-checkbox-input ms-pill-checkbox" value="Website Development"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-Website-development">Website Development</span>
                                     </label>
                                     <label class="w-checkbox ms-pill-item">
-                                        <input type="checkbox" name="services" value="Branding" class="w-checkbox-input ms-pill-checkbox" />
-                                        <span class="ms-pill-label w-form-label">Branding</span>
+                                        <input type="checkbox" name="services[]" id="Checkbox-Branding" class="w-checkbox-input ms-pill-checkbox" value="Branding"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-Branding">Branding</span>
                                     </label>
                                     <label class="w-checkbox ms-pill-item">
-                                        <input type="checkbox" name="services" value="Graphics" class="w-checkbox-input ms-pill-checkbox" />
-                                        <span class="ms-pill-label w-form-label">Graphics</span>
+                                        <input type="checkbox" name="services[]" id="Checkbox-Graphics" class="w-checkbox-input ms-pill-checkbox" value="Graphics"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-Graphics">Graphics</span>
                                     </label>
                                     <label class="w-checkbox ms-pill-item">
-                                        <input type="checkbox" name="services" value="SEO" class="w-checkbox-input ms-pill-checkbox" />
-                                        <span class="ms-pill-label w-form-label">SEO</span>
+                                        <input type="checkbox" name="services[]" id="Checkbox-SEO" class="w-checkbox-input ms-pill-checkbox" value="SEO"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-SEO">SEO</span>
                                     </label>
                                 </div>
                             </div>
-                            
                             <div class="one-quation">
                                 <label for="budget" class="field-label">Budget in INR</label>
                                 <div class="choise-line">
                                     <label class="ms-pill-item w-radio">
-                                        <input type="radio" name="budget" value="1K-5K" class="w-form-formradioinput ms-pill-radio w-radio-input" />
-                                        <span class="ms-pill-label w-form-label">1K-5K</span>
+                                        <input type="radio" name="budget" id="1K-5K" class="w-form-formradioinput ms-pill-radio w-radio-input" value="1K-5K"/>
+                                        <span class="ms-pill-label w-form-label" for="1K-5K">1K-5K</span>
                                     </label>
                                     <label class="ms-pill-item w-radio">
-                                        <input type="radio" name="budget" value="5K-10K" class="w-form-formradioinput ms-pill-radio w-radio-input" />
-                                        <span class="ms-pill-label w-form-label">5K-10K</span>
+                                        <input type="radio" name="budget" id="5K-10K" class="w-form-formradioinput ms-pill-radio w-radio-input" value="5K-10K"/>
+                                        <span class="ms-pill-label w-form-label" for="5K-10K">5K-10K</span>
                                     </label>
                                     <label class="ms-pill-item w-radio">
-                                        <input type="radio" name="budget" value="10K-50K" class="w-form-formradioinput ms-pill-radio w-radio-input" />
-                                        <span class="ms-pill-label w-form-label">10K-50K</span>
+                                        <input type="radio" name="budget" id="10K-50K" class="w-form-formradioinput ms-pill-radio w-radio-input" value="10K-50K"/>
+                                        <span class="ms-pill-label w-form-label" for="10K-50K">10K-50K</span>
                                     </label>
                                     <label class="ms-pill-item w-radio">
-                                        <input type="radio" name="budget" value="More than 50K" class="w-form-formradioinput ms-pill-radio w-radio-input" />
-                                        <span class="ms-pill-label w-form-label">More than 50K</span>
+                                        <input type="radio" name="budget" id="More-than-50K" class="w-form-formradioinput ms-pill-radio w-radio-input" value="More than 50K"/>
+                                        <span class="ms-pill-label w-form-label" for="More-than-50K">More than 50K</span>
                                     </label>
                                 </div>
                             </div>
-                            
                             <div class="form-fileds-grid">
-                                <input class="form-fild w-input" maxlength="256" name="name" placeholder="Name" type="text" id="name" required />
-                                <input class="form-fild w-input" maxlength="256" name="email" placeholder="Email" type="email" id="email" required />
-                                <input class="form-fild w-node-_09ce0052-f45e-49a1-cfa1-3989b7828a74-86dfbe91 w-input" maxlength="256" name="projectDetails" placeholder="Project details (optional)" type="text" id="projectDetails" />
+                                <input class="form-fild w-input" maxlength="256" name="name" data-name="Name" placeholder="Name" type="text" id="name"/>
+                                <input class="form-fild w-input" maxlength="256" name="email" data-name="Email" placeholder="Email" type="email" id="email" required=""/>
+                                <input class="form-fild w-node-_09ce0052-f45e-49a1-cfa1-3989b7828a74-86dfbe91 w-input" maxlength="256" name="project_details" data-name="Project-details" placeholder="Project details (optional)" type="text" id="project-details"/>
                             </div>
-                            
                             <div class="form-btn_wrap">
-                                <div hoverstagger-duration="0.4" hoverstagger="link" class="prime-button">
-                                    <input type="submit" class="form-btn w-button" value="DISCUSS PROJECT" />
+                                <div class="prime-button">
+                                    <input type="submit" data-wait="SENDING..." class="form-btn w-button" value="DISCUSS PROJECT"/>
                                     <div class="button-text-wrap">
                                         <div class="button-anime-text">Discuss project</div>
                                         <div class="button-anime-text is-2">Discuss project</div>
