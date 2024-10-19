@@ -1301,10 +1301,8 @@ a,
                                         <div class="content_wrapper">
                                             <div class="spacer-xxhuge"></div>
                                             <div id="main-form" class="form-wrap w-form">
-<!--                                                <form id="email-form" name="email-form" data-name="Email Form" redirect="/thank-you.html" data-redirect="/thank-you.html" method="post" action="/api/submit-form">
-                                                    <h2 class="h2-simple-small">Please tell us about your project</h2> -->
-                                                <form id="email-form" name="email-form" data-name="Email Form" method="post" action="https://www.adzola.in/api/submit-form" data-redirect="/thank-you.html" onsubmit="formSubmit(event)">
-    <h2 class="h2-simple-small">Please tell us about your project</h2>
+                                                <form id="email-form" name="email-form" data-name="Email Form" redirect="/thank-you.html" data-redirect="/thank-you.html" method="post" action="/api/submit-form">
+                                                    <h2 class="h2-simple-small">Please tell us about your project</h2>
                                                     <div class="one-quation">
                                                         <label for="services" class="field-label">Service</label>
                                                         <div class="choise-line">
@@ -1389,28 +1387,6 @@ a,
                             </section>
                         </div>
                     </div>
-<script>
-function formSubmit(event) {
-    event.preventDefault();  // Prevent default form submission
-    const form = event.target;
-    
-    // Perform your form submission logic here (AJAX request if needed)
-    fetch(form.action, {
-        method: form.method,
-        body: new FormData(form)
-    }).then(response => {
-        if (response.ok) {
-            // Redirect to the thank-you page
-            window.location.href = '/thank-you.html';
-        } else {
-            alert("Oops! Something went wrong while submitting the form.");
-        }
-    }).catch(error => {
-        console.error("Error:", error);
-    });
-}
-</script>
-
                     <section class="footer_section">
                         <div class="padding-global">
                             <div class="container-large">
