@@ -1389,40 +1389,110 @@ a,
                     </div>
 
 <script>
-    // Example of form submission with fetch
-document.getElementById('yourFormId').addEventListener('submit', async function (event) {
-  event.preventDefault(); // Prevent the default form submission
+    import React, { useState } from 'react';
 
-  const formData = new FormData(this);
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    services: formData.getAll('services'), // Get all selected services
-    budget: formData.get('budget'),
-    project_details: formData.get('project_details'),
-  };
+const MyForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [services, setServices] = useState([]);
+  const [budget, setBudget] = useState('');
+  const [projectDetails, setProjectDetails] = useState('');
 
-  try {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     const response = await fetch('/api/submit-form', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        name,
+        email,
+        services,
+        budget,
+        project_details: projectDetails,
+      }),
     });
 
     if (response.ok) {
-      // Redirect to the thank-you page
+      // Redirect to the thank you page
       window.location.href = 'https://www.adzola.in/thank-you.html';
     } else {
-      // Handle error response
       const errorData = await response.json();
-      console.error('Error submitting form:', errorData.error);
+      console.error('Error sending form:', errorData.error);
     }
-  } catch (error) {
-    console.error('Error submitting form:', error);
-  }
-});
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Name"
+        required
+      />
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
+        required
+      />
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            value="Graphics"
+            checked={services.includes('Graphics')}
+            onChange={(e) => {
+              const value = e.target.value;
+              setServices((prev) =>
+                prev.includes(value)
+                  ? prev.filter((service) => service !== value)
+                  : [...prev, value]
+              );
+            }}
+          />
+          Graphics
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            value="SEO"
+            checked={services.includes('SEO')}
+            onChange={(e) => {
+              const value = e.target.value;
+              setServices((prev) =>
+                prev.includes(value)
+                  ? prev.filter((service) => service !== value)
+                  : [...prev, value]
+              );
+            }}
+          />
+          SEO
+        </label>
+        {/* Add more services as needed */}
+      </div>
+      <input
+        type="text"
+        value={budget}
+        onChange={(e) => setBudget(e.target.value)}
+        placeholder="Budget"
+        required
+      />
+      <textarea
+        value={projectDetails}
+        onChange={(e) => setProjectDetails(e.target.value)}
+        placeholder="Project Details"
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
+
+export default MyForm;
 
 </script>
                     
