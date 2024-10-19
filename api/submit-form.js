@@ -1,4 +1,3 @@
-// /api/submit-form.js
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
@@ -30,7 +29,9 @@ export default async function handler(req, res) {
         text: `Name: ${name}\nEmail: ${email}\nServices: ${servicesList}\nBudget: ${budget}\nProject Details: ${project_details || 'No details provided'}`,
       });
 
-      res.status(200).json({ message: 'Email sent successfully!' });
+      // Redirect to the thank-you page
+      res.writeHead(302, { Location: 'https://www.adzola.in/thank-you.html' });
+      res.end();
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Error sending email' });
