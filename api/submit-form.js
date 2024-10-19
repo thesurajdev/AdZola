@@ -3,8 +3,7 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, budget, project_details } = req.body;
-    const services = JSON.parse(req.body.services || '[]'); // Parse the services array
+    const { name, email, service, budget, projectDetails } = req.body;
 
     // Set up Nodemailer transport
     let transporter = nodemailer.createTransport({
@@ -15,24 +14,27 @@ export default async function handler(req, res) {
       },
     });
 
+    // Format the message with all fields
+    const message = `
+      Name: ${name}
+      Email: ${email}
+      Services: ${service ? service.join(', ') : 'None'}
+      Budget: ${budget}
+      Project Details: ${projectDetails || 'No details provided'}
+    `;
+
     // Send an email with form data
     try {
       await transporter.sendMail({
-        from: process.env.GMAIL_USER, // Use the sender's email
-        to: process.env.GMAIL_USER, // Your email address to receive submissions
+        from: process.env.GMAIL_USER, // Use environment variable for sender's email
+        to: process.env.GMAIL_USER, // Replace with your email address
         subject: `New form submission from ${name}`,
-        text: `
-          Name: ${name}
-          Email: ${email}
-          Budget: ${budget}
-          Project Details: ${project_details}
-          Services: ${services.length > 0 ? services.join(', ') : 'None selected'}
-        `,
+        text: message,
       });
 
       res.status(200).json({ message: 'Email sent successfully!' });
     } catch (error) {
-      console.error(error); // Log the error for debugging
+      console.error('Error sending email:', error); // Log the error for debugging
       res.status(500).json({ error: 'Error sending email' });
     }
   } else {
