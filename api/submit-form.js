@@ -5,8 +5,12 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, email, services, budget, project_details } = req.body;
 
-    // Ensure services are captured as an array
-    const servicesList = Array.isArray(services) ? services.join(', ') : 'None';
+    // Check if services is defined and handle it as an array
+    const servicesList = Array.isArray(services) 
+      ? services.join(', ') 
+      : services 
+      ? services 
+      : 'None'; // In case services is not selected at all
 
     // Set up Nodemailer transport
     let transporter = nodemailer.createTransport({
