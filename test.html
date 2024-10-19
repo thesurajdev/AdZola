@@ -88,3 +88,34 @@
         </div>
     </section>
 </div>
+
+
+<script>
+    document.getElementById('email-form').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this);
+    const services = [];
+
+    // Collect selected services
+    this.querySelectorAll('input[name="services[]"]:checked').forEach((checkbox) => {
+        services.push(checkbox.nextElementSibling.innerText); // Get label text for the selected service
+    });
+
+    // Add services to FormData
+    formData.append('services', JSON.stringify(services));
+
+    try {
+        const response = await fetch('/api/submit-form', {
+            method: 'POST',
+            body: formData,
+        });
+
+        const result = await response.json();
+        console.log(result);
+    } catch (error) {
+        console.error('Error submitting form:', error);
+    }
+});
+
+</script>
