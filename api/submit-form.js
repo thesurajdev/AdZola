@@ -13,23 +13,24 @@ export default async function handler(req, res) {
       },
     });
 
-    // Create a formatted message including all form data
-    const servicesList = services ? services.join(', ') : 'No services selected';
-    const message = `
-      Name: ${name}
+    // Prepare the email content
+    const serviceList = services ? services.join(', ') : 'None selected'; // Convert services array to string
+    const emailContent = `
+      New form submission from ${name}
+      
       Email: ${email}
       Budget: ${budget}
-      Services: ${servicesList}
-      Project Details: ${project_details || 'No details provided'}
+      Project Details: ${project_details}
+      Services: ${serviceList}
     `;
 
     // Send an email with form data
     try {
       await transporter.sendMail({
-        from: process.env.GMAIL_USER, // Use the sender email from environment variables
-        to: process.env.GMAIL_USER, // Replace with your receiving email
+        from: process.env.GMAIL_USER, // Use the same email as the auth user
+        to: process.env.GMAIL_USER, // Change this to your desired recipient
         subject: `New form submission from ${name}`,
-        text: message,
+        text: emailContent,
       });
 
       res.status(200).json({ message: 'Email sent successfully!' });
