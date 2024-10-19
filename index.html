@@ -1389,6 +1389,7 @@ a,
                     </div>
 
 <script>
+
     import React, { useState } from 'react';
 
 const MyForm = () => {
@@ -1399,7 +1400,7 @@ const MyForm = () => {
   const [projectDetails, setProjectDetails] = useState('');
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Prevent the default form submission
 
     const response = await fetch('/api/submit-form', {
       method: 'POST',
@@ -1493,6 +1494,7 @@ const MyForm = () => {
 };
 
 export default MyForm;
+
 
 </script>
                     
