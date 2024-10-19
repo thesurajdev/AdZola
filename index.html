@@ -1387,6 +1387,38 @@ a,
                             </section>
                         </div>
                     </div>
+                    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('email-form');
+    
+    form.addEventListener('submit', async function(event) {
+      event.preventDefault();  // Prevent the default form submission
+      
+      // Gather form data
+      const formData = new FormData(form);
+      const actionUrl = form.action;
+      
+      try {
+        // Send the form data using Fetch API
+        const response = await fetch(actionUrl, {
+          method: form.method,
+          body: formData
+        });
+        
+        if (response.ok) {
+          // Redirect to the Thank You page if the response is successful
+          window.location.href = "/thank-you.html";
+        } else {
+          // Handle errors if the submission failed
+          console.error('Form submission failed');
+        }
+      } catch (error) {
+        console.error('Error during form submission:', error);
+      }
+    });
+  });
+</script>
+
                     <section class="footer_section">
                         <div class="padding-global">
                             <div class="container-large">
