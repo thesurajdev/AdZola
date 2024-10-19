@@ -1389,6 +1389,27 @@ a,
                             </section>
                         </div>
                     </div>
+<script>
+function formSubmit(event) {
+    event.preventDefault();  // Prevent default form submission
+    const form = event.target;
+    
+    // Perform your form submission logic here (AJAX request if needed)
+    fetch(form.action, {
+        method: form.method,
+        body: new FormData(form)
+    }).then(response => {
+        if (response.ok) {
+            // Redirect to the thank-you page
+            window.location.href = '/thank-you.html';
+        } else {
+            alert("Oops! Something went wrong while submitting the form.");
+        }
+    }).catch(error => {
+        console.error("Error:", error);
+    });
+}
+</script>
 
                     <section class="footer_section">
                         <div class="padding-global">
