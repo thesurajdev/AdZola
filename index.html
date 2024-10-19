@@ -35,11 +35,6 @@
         <link href="Images/AdZola Icon.png" rel="shortcut icon" type="image/x-icon"/>
         <link href="Images/AdZola Icon.png" rel="apple-touch-icon"/>
         <style>
-            .form-btn {
-  position: relative;
-  z-index: 10; /* Make sure the button is clickable by bringing it to the foreground */
-}
-
             /* Стилізація для всіх елементів скролбару на сайті */
             ::-webkit-scrollbar {
                 width: 0px;
@@ -1306,8 +1301,10 @@ a,
                                         <div class="content_wrapper">
                                             <div class="spacer-xxhuge"></div>
                                             <div id="main-form" class="form-wrap w-form">
-                                                <form id="email-form" name="email-form" data-name="Email Form" redirect="/thank-you.html" data-redirect="/thank-you.html" method="post" action="/api/submit-form">
-                                                    <h2 class="h2-simple-small">Please tell us about your project</h2>
+<!--                                                <form id="email-form" name="email-form" data-name="Email Form" redirect="/thank-you.html" data-redirect="/thank-you.html" method="post" action="/api/submit-form">
+                                                    <h2 class="h2-simple-small">Please tell us about your project</h2> -->
+                                                <form id="email-form" name="email-form" data-name="Email Form" method="post" action="https://www.adzola.in/api/submit-form" data-redirect="/thank-you.html" onsubmit="formSubmit(event)">
+    <h2 class="h2-simple-small">Please tell us about your project</h2>
                                                     <div class="one-quation">
                                                         <label for="services" class="field-label">Service</label>
                                                         <div class="choise-line">
@@ -1392,37 +1389,6 @@ a,
                             </section>
                         </div>
                     </div>
-                    <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById('email-form');
-    
-    form.addEventListener('submit', async function(event) {
-      event.preventDefault();  // Prevent the default form submission
-      
-      // Gather form data
-      const formData = new FormData(form);
-      const actionUrl = form.action;
-      
-      try {
-        // Send the form data using Fetch API
-        const response = await fetch(actionUrl, {
-          method: form.method,
-          body: formData
-        });
-        
-        if (response.ok) {
-          // Redirect to the Thank You page if the response is successful
-          window.location.href = "/thank-you.html";
-        } else {
-          // Handle errors if the submission failed
-          console.error('Form submission failed');
-        }
-      } catch (error) {
-        console.error('Error during form submission:', error);
-      }
-    });
-  });
-</script>
 
                     <section class="footer_section">
                         <div class="padding-global">
