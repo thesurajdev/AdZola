@@ -1,0 +1,90 @@
+<div class="is-up-paralax">
+    <section id="form_section" class="form_section">
+        <div class="padding-global">
+            <div class="container-large">
+                <div class="content_wrapper">
+                    <div class="spacer-xxhuge"></div>
+                    <div id="main-form" class="form-wrap w-form">
+                        <form id="email-form" name="email-form" data-name="Email Form" action="/api/submit-form" method="POST">
+                            <h2 class="h2-simple-small">Please tell us about your project</h2>
+                            <div class="one-quation">
+                                <label for="name" class="field-label">Service</label>
+                                <div class="choise-line">
+                                    <label class="w-checkbox ms-pill-item">
+                                        <input type="checkbox" name="services[]" id="Checkbox-Social-Media-Management" data-name="Checkbox Social Media Management" class="w-checkbox-input ms-pill-checkbox"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-Social-Media-Management">Social Media Management</span>
+                                    </label>
+                                    <label class="w-checkbox ms-pill-item">
+                                        <input type="checkbox" name="services[]" id="Checkbox-Paid-Advertising" data-name="Checkbox Paid Advertising" class="w-checkbox-input ms-pill-checkbox"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-Paid-Advertising">Paid Advertising</span>
+                                    </label>
+                                    <label class="w-checkbox ms-pill-item">
+                                        <input type="checkbox" name="services[]" id="Checkbox-Website-development" data-name="Checkbox Website development" class="w-checkbox-input ms-pill-checkbox"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-Website-development">Website development</span>
+                                    </label>
+                                    <label class="w-checkbox ms-pill-item">
+                                        <input type="checkbox" name="services[]" id="Checkbox-Branding" data-name="Checkbox Branding" class="w-checkbox-input ms-pill-checkbox"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-Branding">Branding</span>
+                                    </label>
+                                    <label class="w-checkbox ms-pill-item">
+                                        <input type="checkbox" name="services[]" id="Checkbox-Graphics" data-name="Checkbox Graphics" class="w-checkbox-input ms-pill-checkbox"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-Graphics">Graphics</span>
+                                    </label>
+                                    <label class="w-checkbox ms-pill-item">
+                                        <input type="checkbox" name="services[]" id="Checkbox-SEO" data-name="Checkbox SEO" class="w-checkbox-input ms-pill-checkbox"/>
+                                        <span class="ms-pill-label w-form-label" for="Checkbox-SEO">SEO</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="one-quation">
+                                <label for="name-2" class="field-label">Budget in INR</label>
+                                <div class="choise-line">
+                                    <label class="ms-pill-item w-radio">
+                                        <input type="radio" name="budget" id="1K-5K" data-name="budget" class="w-form-formradioinput ms-pill-radio w-radio-input" value="1K-5K"/>
+                                        <span class="ms-pill-label w-form-label" for="1K-5K">1K-5K</span>
+                                    </label>
+                                    <label class="ms-pill-item w-radio">
+                                        <input type="radio" name="budget" id="5K-10K" data-name="budget" class="w-form-formradioinput ms-pill-radio w-radio-input" value="5K-10K"/>
+                                        <span class="ms-pill-label w-form-label" for="5K-10K">5K-10K</span>
+                                    </label>
+                                    <label class="ms-pill-item w-radio">
+                                        <input type="radio" name="budget" id="10K-50K" data-name="budget" class="w-form-formradioinput ms-pill-radio w-radio-input" value="10K-50K"/>
+                                        <span class="ms-pill-label w-form-label" for="10K-50K">10K-50K</span>
+                                    </label>
+                                    <label class="ms-pill-item w-radio">
+                                        <input type="radio" name="budget" id="More-than-50K" data-name="budget" class="w-form-formradioinput ms-pill-radio w-radio-input" value="More than 50K"/>
+                                        <span class="ms-pill-label w-form-label" for="More-than-50K">more than 50K</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-fileds-grid">
+                                <input class="form-fild w-input" maxlength="256" name="name" data-name="Name" placeholder="Name" type="text" id="name" required/>
+                                <input class="form-fild w-input" maxlength="256" name="email" data-name="Email" placeholder="Email" type="email" id="Email" required=""/>
+                                <input class="form-fild w-node-_09ce0052-f45e-49a1-cfa1-3989b7828a74-86dfbe91 w-input" maxlength="256" name="project_details" data-name="Project-details" placeholder="Project details (optional)" type="text" id="Project-details"/>
+                            </div>
+                            <div class="form-btn_wrap">
+                                <div hoverstagger-duration="0.4" hoverstagger="link" data-w-id="a84b2254-a07f-7150-2feb-a3534de993f7" class="prime-button">
+                                    <input type="submit" data-wait="SENDING..." class="form-btn w-button" value="DISCUSS PROJECT"/>
+                                    <div class="button-text-wrap">
+                                        <div hoverstagger="text" text-split="" class="button-anime-text">Discuss project</div>
+                                        <div hoverstagger="text" text-split="" class="button-anime-text is-2">Discuss project</div>
+                                    </div>
+                                    <div class="prime-button_divider"></div>
+                                    <div class="prime-button_divider is-reverse"></div>
+                                    <div class="prime-button_divider is-current"></div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="success-message w-form-done">
+                            <h2 class="h2-simple-small">Thank you! Your submission has been received!</h2>
+                        </div>
+                        <div class="w-form-fail">
+                            <div>Oops! Something went wrong while submitting the form.</div>
+                        </div>
+                    </div>
+                    <div class="spacer-xxhuge is-last"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
