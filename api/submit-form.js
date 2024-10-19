@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, email, services, budget, project_details } = req.body;
 
-    // Join services into a string if multiple selected
+    // Ensure services are captured as an array
     const servicesList = Array.isArray(services) ? services.join(', ') : 'None';
 
     // Set up Nodemailer transport
@@ -28,6 +28,7 @@ export default async function handler(req, res) {
 
       res.status(200).json({ message: 'Email sent successfully!' });
     } catch (error) {
+      console.error(error);
       res.status(500).json({ error: 'Error sending email' });
     }
   } else {
