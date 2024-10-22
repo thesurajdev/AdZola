@@ -2081,18 +2081,18 @@ textarea.w-input, textarea.w-select {
 }
 
 :root {
-  --swatch--white: white;
-  --swatch--black: black;
-  --swatch--grey-main: #999;
-  --swatch--grey-stroke-two: #4d4d4d;
-  --swatch--green-light: #FF9700;
-  --swatch--blue-dark: #000000;
-  --white: white;
-  --black: black;
-  --swatch--grey-stroke-one: #d0d0d0;
-  --swatch--grey-blue: #FFE5CC;
-  --swatch--blue-light: #D3D3D3;
-  --swatch--grey-other: #909aaa;
+    --swatch--white: white;
+    --swatch--black: black;
+    --swatch--grey-main: #ffcc99;         /* Light Orange */
+    --swatch--grey-stroke-two: #cc9933;   /* Medium Orange */
+    --swatch--green-light: #ffe0b2;       /* Light Peach */
+    --swatch--blue-dark: #e65100;         /* Dark Orange */
+    --white: white;
+    --black: black;
+    --swatch--grey-stroke-one: #ffdb99;   /* Soft Orange */
+    --swatch--grey-blue: #ffb74d;         /* Warm Orange */
+    --swatch--blue-light: #ffcc80;        /* Light Soft Orange */
+    --swatch--grey-other: #ff9900;        /* Bright Orange */
 }
 
 .w-checkbox {
