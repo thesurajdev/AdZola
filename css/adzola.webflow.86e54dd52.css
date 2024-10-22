@@ -2085,13 +2085,13 @@ textarea.w-input, textarea.w-select {
     --swatch--black: black;
     --swatch--grey-main: #999;
     --swatch--grey-stroke-two: #4d4d4d;
-    --swatch--orange-light: #ffe6b3; /* Light Orange */
-    --swatch--orange-dark: #7f5e2e;  /* Dark Orange */
+    --swatch--green-light: #dbf2bd;
+    --swatch--blue-dark: #2f3847;
     --white: white;
     --black: black;
     --swatch--grey-stroke-one: #d0d0d0;
     --swatch--grey-blue: #b3bdce;
-    --swatch--orange-light: #f9c9b4; /* Light Orange variant */
+    --swatch--blue-light: #a6b8c6;
     --swatch--grey-other: #909aaa;
 }
 
