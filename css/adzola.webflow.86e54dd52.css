@@ -4486,7 +4486,7 @@ figcaption {
 }
 
 .footer-copyright {
-  color: var(--swatch--grey-main);
+  color: var(--black);
   font-size: .875rem;
   font-weight: 500;
 }
