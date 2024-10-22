@@ -248,6 +248,10 @@ html.w-mod-touch * {
   display: inline-block;
 }
 
+.invert-image {
+    filter: invert(1);
+}
+
 .w-clearfix:before, .w-clearfix:after {
   content: " ";
   grid-area: 1 / 1 / 2 / 2;
