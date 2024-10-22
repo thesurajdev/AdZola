@@ -4354,7 +4354,7 @@ figcaption {
 }
 
 .form-fild::placeholder {
-  color: var(--swatch--grey-main);
+  color: var(--white);
 }
 
 .form-btn_wrap {
