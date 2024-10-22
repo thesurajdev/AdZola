@@ -3846,7 +3846,7 @@ figcaption {
 }
 
 .about_section {
-  background-color: var(--swatch--grey-blue);
+  background-color: var(--white);
   border-top-left-radius: 3.75rem;
   border-top-right-radius: 3.75rem;
   margin-top: -6rem;
