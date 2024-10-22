@@ -2092,7 +2092,7 @@ textarea.w-input, textarea.w-select {
     --swatch--grey-stroke-one: #d0d0d0;
     --swatch--grey-blue: #A9A9B0;
     --swatch--blue-light: #A9A9B0;
-    --swatch--grey-other: #909aaa;
+    --swatch--grey-other: black;
 }
 
 .w-checkbox {
