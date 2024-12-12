@@ -30,8 +30,7 @@ export default async function handler(req, res) {
       });
 
       // Redirect to the thank-you page
-      res.writeHead(302, { Location: 'https://www.adzola.in/thank-you.html' });
-      res.end();
+      res.redirect(302, 'https://www.adzola.in/thank-you.html');
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Error sending email' });
@@ -40,4 +39,3 @@ export default async function handler(req, res) {
     res.status(405).end(); // Method Not Allowed
   }
 }
- 
