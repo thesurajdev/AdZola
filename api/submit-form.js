@@ -9,14 +9,14 @@ export default async function handler(req, res) {
       ? services.join(', ') 
       : services 
       ? services 
-      : 'None'; // In case services is not selected at all
+      : 'None';
 
     // Set up Nodemailer transport
     let transporter = nodemailer.createTransport({
       service: 'Gmail',
       auth: {
-        user: process.env.GMAIL_USER, // Use environment variables
-        pass: process.env.GMAIL_PASS, // Gmail password or App Password
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS,
       },
     });
 
@@ -24,18 +24,20 @@ export default async function handler(req, res) {
     try {
       await transporter.sendMail({
         from: process.env.GMAIL_USER,
-        to: process.env.GMAIL_USER, // Change this to your email address
+        to: process.env.GMAIL_USER,
         subject: `New form submission from ${name}`,
         text: `Name: ${name}\nEmail: ${email}\nServices: ${servicesList}\nBudget: ${budget}\nProject Details: ${project_details || 'No details provided'}`,
       });
 
-      // Redirect to the thank-you page
-      res.redirect(302, 'https://www.adzola.in/thank-you.html');
+      // Return success response
+      res.status(200).json({ 
+        success: true
+      });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Error sending email' });
     }
   } else {
-    res.status(405).end(); // Method Not Allowed
+    res.status(405).end();
   }
 }
