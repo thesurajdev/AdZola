@@ -703,7 +703,7 @@ a,
                                         <div class="hero-fierst-block_left">
                                             <div hero-scena="" class="hero_h1-wrapper">
                                                 <h1 id="hero-h1" class="hero-1">
-                                                    We’re an <span appear-anime="" text-split="" class="text-appear">Ad</span>
+                                                    We're an <span appear-anime="" text-split="" class="text-appear">Ad</span>
                                                     <span appear-anime="" text-split="" class="text-appear">agency</span>
                                                     that boost your <span appear-anime="" text-split="" class="text-appear">brand</span>
                                                     visibility
@@ -777,8 +777,8 @@ a,
                                         <div class="hero_prime-button">
                                             <a href="#form_section" hoverstagger-duration="0.4" hoverstagger="link" data-w-id="2e644cc3-31b1-e84a-61b4-63835f3bfe1f" class="prime-button w-inline-block">
                                                 <div class="button-text-wrap is-pad">
-                                                    <div hoverstagger="text" text-split="" class="button-anime-text">Let’s Discuss</div>
-                                                    <div hoverstagger="text" text-split="" class="button-anime-text is-2">Let’s Discuss</div>
+                                                    <div hoverstagger="text" text-split="" class="button-anime-text">Let's Discuss</div>
+                                                    <div hoverstagger="text" text-split="" class="button-anime-text is-2">Let's Discuss</div>
                                                 </div>
                                                 <div class="prime-button_divider"></div>
                                                 <div style="-webkit-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="prime-button_divider is-reverse"></div>
@@ -983,7 +983,7 @@ a,
                                                 </div>
                                                 <div id="w-node-d1455cd0-9409-b454-7999-dfa07a7de744-86dfbe91" class="about-us_content-part">
                                                     <div class="lagre-text-size">
-                                                        “At AdZola, we're a dynamic team based in Delhi, dedicated to crafting cutting-edge advertising solutions that redefine industry standards. 
+                                                        "At AdZola, we're a dynamic team based in Delhi, dedicated to crafting cutting-edge advertising solutions that redefine industry standards. 
                                                         Specializing in innovative campaigns, we empower small businesses, startups, and brands to thrive by transforming concepts into impactful strategies. <br/>
                                                     </div>
                                                     <div class="author_wrap">
@@ -1030,8 +1030,8 @@ a,
                                             <div class="cta_prime-button">
                                                 <a href="#form_section" hoverstagger-duration="0.4" hoverstagger="link" data-w-id="40d1f241-6ac4-9df9-4de6-cbfc8d6356e6" class="prime-button w-inline-block">
                                                     <div class="button-text-wrap is-pad">
-                                                        <div hoverstagger="text" text-split="" class="button-anime-text">Let’s collaborate</div>
-                                                        <div hoverstagger="text" text-split="" class="button-anime-text is-2">Let’s collaborate</div>
+                                                        <div hoverstagger="text" text-split="" class="button-anime-text">Let's collaborate</div>
+                                                        <div hoverstagger="text" text-split="" class="button-anime-text is-2">Let's collaborate</div>
                                                     </div>
                                                     <div class="prime-button_divider"></div>
                                                     <div class="prime-button_divider is-reverse is-dark-blue"></div>
@@ -1270,25 +1270,25 @@ a,
                             <div class="run-text_wrapper">
                                 <div class="run-part_wrap scroll">
                                     <div class="one-run-part">
-                                        <div>Let’s work</div>
+                                        <div>Let's work</div>
                                         <div class="divider-dot"></div>
-                                        <div>Let’s work</div>
+                                        <div>Let's work</div>
                                         <div class="divider-dot"></div>
-                                        <div>Let’s work</div>
+                                        <div>Let's work</div>
                                         <div class="divider-dot"></div>
-                                        <div>Let’s work</div>
+                                        <div>Let's work</div>
                                     </div>
                                     <div class="divider-dot"></div>
                                 </div>
                                 <div class="run-part_wrap scroll">
                                     <div class="one-run-part">
-                                        <div>Let’s work</div>
+                                        <div>Let's work</div>
                                         <div class="divider-dot"></div>
-                                        <div>Let’s work</div>
+                                        <div>Let's work</div>
                                         <div class="divider-dot"></div>
-                                        <div>Let’s work</div>
+                                        <div>Let's work</div>
                                         <div class="divider-dot"></div>
-                                        <div>Let’s work</div>
+                                        <div>Let's work</div>
                                     </div>
                                     <div class="divider-dot"></div>
                                 </div>
@@ -1392,6 +1392,9 @@ a,
 function handleSubmit(event) {
     event.preventDefault(); // Prevent default form submission
     const form = event.target;
+    
+    // Show the loading overlay
+    document.getElementById('loading-overlay').style.display = 'flex';
 
     fetch(form.action, {
         method: 'POST',
@@ -1399,13 +1402,20 @@ function handleSubmit(event) {
     })
     .then(response => {
         if (response.ok) {
-            window.location.href = 'https://www.adzola.in/thank-you.html'; // Redirect on success
+            // Redirect on success
+            window.location.href = 'https://www.adzola.in/thank-you.html';
         } else {
             throw new Error('Network response was not ok.');
         }
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
+        // Show error message to user
+        document.querySelector('.w-form-fail').style.display = 'block';
+    })
+    .finally(() => {
+        // Hide the loading overlay
+        document.getElementById('loading-overlay').style.display = 'none';
     });
 }
 </script>
@@ -1451,7 +1461,7 @@ function handleSubmit(event) {
 function handleSubmit(event) {
     event.preventDefault(); // Prevent default form submission
     const form = event.target;
-
+    
     // Show the loading overlay
     document.getElementById('loading-overlay').style.display = 'flex';
 
@@ -1469,6 +1479,8 @@ function handleSubmit(event) {
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
+        // Show error message to user
+        document.querySelector('.w-form-fail').style.display = 'block';
     })
     .finally(() => {
         // Hide the loading overlay
