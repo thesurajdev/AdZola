@@ -35,9 +35,28 @@
         <link href="Images/AdZola Icon.png" rel="shortcut icon" type="image/x-icon"/>
         <link href="Images/AdZola Icon.png" rel="apple-touch-icon"/>
         <style>
-            .stone-img video {
-    mix-blend-mode: lighten;
+.stone-wrap {
+    position: relative;
+    background: #000; /* Example background for testing */
+    z-index: 0;
 }
+
+.stone-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.stone-img video {
+    mix-blend-mode: lighten;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
             /* Стилізація для всіх елементів скролбару на сайті */
             ::-webkit-scrollbar {
                 width: 0px;
