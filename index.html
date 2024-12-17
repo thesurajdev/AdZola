@@ -1351,7 +1351,6 @@ a,
                                                         <input class="form-fild w-input" maxlength="256" name="name" data-name="Name" placeholder="Name" type="text" id="name"/>
                                                         <input class="form-fild w-input" maxlength="256" name="email" data-name="Email" placeholder="Email" type="email" id="email" required=""/>
                                                         <input class="form-fild w-input" maxlength="15" name="mobile" data-name="Mobile" placeholder="Mobile Number" type="tel" id="mobile" pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number" required=""/>
-                                                        <input class="form-fild w-input" maxlength="15" name="mobile" data-name="Mobile" placeholder="Mobile Number" type="tel" id="mobile" required=""/>
                                                         <input class="form-fild w-node-_09ce0052-f45e-49a1-cfa1-3989b7828a74-86dfbe91 w-input" maxlength="256" name="project_details" data-name="Project-details" placeholder="Project details (optional)" type="text" id="project-details"/>
                                                     </div>
                                                     <div class="form-btn_wrap">
@@ -1383,19 +1382,6 @@ a,
                             </section>
                         </div>
                     </div>
-
-                    <!--Country Selection-->
-                    <script>
-                      const input = document.querySelector("#mobile");
-                    
-                      // Initialize the intl-tel-input plugin
-                      const iti = window.intlTelInput(input, {
-                        initialCountry: "auto", // Automatically detect the country
-                        preferredCountries: ['us', 'gb', 'in'], // Optional: set preferred countries
-                        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // Utility script
-                      });
-                    </script>
-                    <!--Country Selection end-->
                     
 
 <script>
@@ -1655,10 +1641,6 @@ function handleSubmit(event) {
 
             requestAnimationFrame(raf)
         </script>
-        <!--Country Selection-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-        <!--Country Selection End-->
         <script src="https://unpkg.com/split-type"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
