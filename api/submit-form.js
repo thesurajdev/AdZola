@@ -2,7 +2,7 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, services, budget, project_details } = req.body;
+    const { name, email, services, budget, project_details, mobile } = req.body;
 
     // Check if services is defined and handle it as an array
     const servicesList = Array.isArray(services) 
@@ -26,9 +26,9 @@ export default async function handler(req, res) {
         from: process.env.GMAIL_USER,
         to: process.env.GMAIL_USER,
         subject: `New form submission from ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\nServices: ${servicesList}\nBudget: ${budget}\nProject Details: ${project_details || 'No details provided'}`,
+        text: `Name: ${name}\nEmail: ${email}\nMobile: ${mobile}\nServices: ${servicesList}\nBudget: ${budget}\nProject Details: ${project_details || 'No details provided'}`,
       });
-
+      
       // Return success response
       res.status(200).json({ 
         success: true
