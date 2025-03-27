@@ -1395,19 +1395,19 @@ a,
         // Show the loading overlay
         document.getElementById('loading-overlay').style.display = 'flex';
 
-        // Get form data
+        // Get form data for webhook
         const formData = new FormData(form);
-        const data = {};
+        const webhookData = {};
         formData.forEach((value, key) => {
-            data[key] = value;
+            webhookData[key] = value;
         });
 
-        // Get selected services
+        // Get selected services for webhook
         const services = [];
         document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
             services.push(checkbox.value);
         });
-        data.services = services;
+        webhookData.services = services;
 
         // Send data to webhook
         fetch('https://hook.us2.make.com/18f8m4u0t997fcryqtdltsughi7b2h88', {
@@ -1415,7 +1415,15 @@ a,
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(webhookData)
+        }).catch(error => {
+            console.error('Webhook submission error:', error);
+        });
+
+        // Original form submission
+        fetch(form.action, {
+            method: 'POST',
+            body: new URLSearchParams(new FormData(form)),
         })
         .then(response => {
             if (response.ok) {
