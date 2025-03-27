@@ -1387,7 +1387,7 @@ a,
 
 
 
-                    <script>
+<script>
 function handleSubmit(event) {
     event.preventDefault(); // Prevent default form submission
     const form = event.target;
@@ -1395,20 +1395,9 @@ function handleSubmit(event) {
     // Show the loading overlay
     document.getElementById('loading-overlay').style.display = 'flex';
 
-    // Convert form data to JSON
-    const formData = new FormData(form);
-    const jsonData = {};
-    formData.forEach((value, key) => {
-        jsonData[key] = value;
-    });
-
-    // Your Make.com Webhook URL
-    const webhookURL = "https://hook.us2.make.com/18f8m4u0t997fcryqtdltsughi7b2h88";
-
-    fetch(webhookURL, {
+    fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(jsonData),
+        body: new URLSearchParams(new FormData(form)),
     })
     .then(response => {
         if (response.ok) {
@@ -1429,6 +1418,7 @@ function handleSubmit(event) {
     });
 }
 </script>
+
 
 
 <!-- Loading Screen -->
