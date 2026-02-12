@@ -1,0 +1,223 @@
+/**
+ * Global Styles CSS
+ * Common styles used across the website
+ */
+
+/* ============================================
+   SCROLLBAR STYLING
+   ============================================ */
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(142, 142, 142, 0.4);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(142, 142, 142, 0.6);
+}
+
+::-webkit-scrollbar-track-piece:start {
+    background: transparent url('https://assets-global.website-files.com/6527b46c9f9e668d86dfbe29/65e5e2fa61ae45e8b55c9450_scr-im.png') repeat-y !important;
+}
+
+::-webkit-scrollbar-track-piece:end {
+    background: transparent url('https://assets-global.website-files.com/6527b46c9f9e668d86dfbe29/65e5e2fa61ae45e8b55c9450_scr-im.png') repeat-y !important;
+}
+
+/* ============================================
+   CUSTOM CURSOR STYLING
+   ============================================ */
+
+body {
+    cursor: none;
+}
+
+.circle-cursor {
+    position: fixed;
+    width: 13px;
+    height: 13px;
+    border-radius: 13px;
+    border: 2px solid #000;
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.circle-cursor.visible {
+    visibility: visible;
+}
+
+.circle-cursor.hovered {
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.circle-cursor.other-hovered {
+    transform: translate(-50%, -50%) scale(1.25);
+    opacity: 1;
+}
+
+@media screen and (max-width: 991px) {
+    .circle-cursor {
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+    }
+    
+    body {
+        cursor: auto;
+    }
+}
+
+/* ============================================
+   LOADING OVERLAY
+   ============================================ */
+
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 8px solid white;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   TEXT ANIMATIONS
+   ============================================ */
+
+.loader-text > .word > .char {
+    opacity: 0.2;
+}
+
+.text-appear {
+    display: inline-flex;
+}
+
+.page-load {
+    display: flex;
+}
+
+/* ============================================
+   LINE MASK STYLING
+   ============================================ */
+
+.line {
+    position: relative;
+}
+
+.line-mask {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #000000;
+    opacity: 0.4;
+    height: 105%;
+    width: 100%;
+    z-index: 2;
+}
+
+/* ============================================
+   SCROLL ANIMATIONS
+   ============================================ */
+
+@keyframes scroll {
+    from {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    to {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+.scroll {
+    animation: scroll 30s linear infinite;
+}
+
+.reverse {
+    animation-direction: reverse;
+}
+
+@media (max-width: 767px) {
+    .scroll {
+        animation: none;
+    }
+}
+
+/* ============================================
+   FOOTER ADJUSTMENTS
+   ============================================ */
+
+@media screen and (min-width: 479px) {
+    .footer_section {
+        margin-top: -42rem;
+    }
+}
+
+/* ============================================
+   BUTTON TRANSITIONS
+   ============================================ */
+
+.button {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-eye {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.all-cases-button_wrap:hover .button {
+    background-color: var(--swatch--black);
+    color: var(--swatch--white);
+}
+
+.all-cases-button_wrap:hover .btn-eye {
+    background-color: transparent;
+    color: var(--swatch--black);
+}
+
+/* ============================================
+   ELEMENT TRANSFORMS FOR PERFORMANCE
+   ============================================ */
+
+.one-soc-link_wrap,
+.showreel-play_wrap,
+.one-icon_wrap,
+.one-case_img-wrap,
+.one-cases_wrap {
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+
+.one-soc-link_wrap {
+    overflow: clip;
+}
