@@ -145,6 +145,146 @@
                 z-index: 2;
             }
         </style>
+        
+<!--Schema-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "Organization",
+      "@id": "https://adzola.surajdev.com/#organization",
+      "name": "AdZola",
+      "url": "https://adzola.surajdev.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://adzola.surajdev.com/Images/AdZola%20Logo.svg"
+      },
+      "description": "Advertising agency specialising in SEO, Paid Advertising, Social Media Management, Branding, Graphic Design and Web Development.",
+      "email": "adzola@surajdev.com",
+      "founder": {
+        "@id": "https://adzola.surajdev.com/#surajdev"
+      },
+      "sameAs": [
+        "https://www.instagram.com/adzolaIndia/",
+        "https://www.linkedin.com/company/AdZolaIndia",
+        "https://x.com/AdZolaIndia"
+      ]
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://adzola.surajdev.com/#surajdev",
+      "name": "Suraj Dev",
+      "jobTitle": "Founder",
+      "url": "https://surajdev.com",
+      "worksFor": {
+        "@id": "https://adzola.surajdev.com/#organization"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/thesurajdev",
+        "https://www.instagram.com/thesurajdev",
+        "https://www.behance.net/thesurajdev",
+        "https://github.com/thesurajdev"
+      ]
+    },
+
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://adzola.surajdev.com/#service-business",
+      "name": "AdZola",
+      "url": "https://adzola.surajdev.com",
+      "image": "https://adzola.surajdev.com/Images/AdZola%20Logo.svg",
+      "priceRange": "₹₹",
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
+      "serviceType": [
+        "Search Engine Optimization",
+        "Social Media Management",
+        "Paid Advertising",
+        "Branding",
+        "Graphic Design",
+        "Web Development",
+        "Marketing Strategy"
+      ],
+      "provider": {
+        "@id": "https://adzola.surajdev.com/#organization"
+      }
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://adzola.surajdev.com/#website",
+      "url": "https://adzola.surajdev.com",
+      "name": "AdZola",
+      "publisher": {
+        "@id": "https://adzola.surajdev.com/#organization"
+      },
+      "inLanguage": "en"
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://adzola.surajdev.com/#seo-service",
+      "name": "SEO Services",
+      "serviceType": "Search Engine Optimization",
+      "provider": {
+        "@id": "https://adzola.surajdev.com/#organization"
+      },
+      "areaServed": "Worldwide"
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://adzola.surajdev.com/#smm-service",
+      "name": "Social Media Management",
+      "serviceType": "Social Media Marketing",
+      "provider": {
+        "@id": "https://adzola.surajdev.com/#organization"
+      },
+      "areaServed": "Worldwide"
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://adzola.surajdev.com/#ppc-service",
+      "name": "Paid Advertising",
+      "serviceType": "PPC Advertising",
+      "provider": {
+        "@id": "https://adzola.surajdev.com/#organization"
+      },
+      "areaServed": "Worldwide"
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://adzola.surajdev.com/#branding-service",
+      "name": "Branding Services",
+      "serviceType": "Brand Development",
+      "provider": {
+        "@id": "https://adzola.surajdev.com/#organization"
+      },
+      "areaServed": "Worldwide"
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://adzola.surajdev.com/#web-development-service",
+      "name": "Web Development",
+      "serviceType": "Website Design and Development",
+      "provider": {
+        "@id": "https://adzola.surajdev.com/#organization"
+      },
+      "areaServed": "Worldwide"
+    }
+
+  ]
+}
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
